@@ -2,15 +2,14 @@ package skills
 
 import (
 	"fmt"
-    "go_study_rpg_service/internal/tools"
+	"go_study_rpg_service/internal/tools"
 )
 
 type Spell struct {
-	Name string
-	Cost int
-	Weapon Weapon 
+	Name    string
+	Cost    int
+	Weapon  tools.Weapon
 	Element string
-	
 }
 
 type Skill interface {
@@ -19,8 +18,8 @@ type Skill interface {
 }
 
 func (s *Spell) Execute() string {
-	return fmt.Sprintf("Casting %s using %s - Cost: %d mana", 
-						s.Name, &s.Weapon.GetName, s.Cost)
+	return fmt.Sprintf("Casting %s using %s - Cost: %d mana",
+		s.Name, s.Weapon.Attack(), s.Cost)
 }
 
 func (s *Spell) GetManaCost() int {
@@ -42,10 +41,9 @@ type HolySmite struct {
 	HealAmount int
 }
 
-
-type Tool interface {
-	Action()
-}
+// type Tool interface {
+// 	Action()
+// }
 
 // type tools struct {
 // 	Hand hand
@@ -53,12 +51,10 @@ type Tool interface {
 // 	Wand wand
 // }
 
+// func (spell *Spell) CostSpell() string {
+// 	return fmt.Sprintf("I casting %s using %s mana", spell.Name, spell.Cost)
+// }
 
-
-func (spell *Spell) CostSpell() string {
-	return fmt.Sprintf("I casting %s using %s mana", spell.Name, spell.Cost )
-}
-
-func Action() Tool {
-	return fmt.Sprintf("I casting with ...")
-}
+// func Action() Tool {
+// 	return fmt.Sprintf("I casting with ...")
+// }
