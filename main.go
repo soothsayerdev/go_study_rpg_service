@@ -34,7 +34,7 @@ func main() {
 	}
 
 	fireball := &skills.FireballSpell{
-		Spell: skills.Spell{
+		Spell: &skills.Spell{
 			Name:    "Fireball",
 			Cost:    50,
 			Weapon:  fireStaff,

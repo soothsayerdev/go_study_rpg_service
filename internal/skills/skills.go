@@ -17,7 +17,7 @@ type Skill interface {
 	GetManaCost() int
 }
 
-func (s *Spell) Execute() string {
+func (s *Skill) Execute() string {
 	return fmt.Sprintf("Casting %s using %s - Cost: %d mana",
 		s.Name, s.Weapon.Attack(), s.Cost)
 }
@@ -27,17 +27,17 @@ func (s *Spell) GetManaCost() int {
 }
 
 type FireballSpell struct {
-	Spell
+	Spell *Spell
 	BurnDamage int
 }
 
 type StealthStrike struct {
-	Spell
+	Spell *Spell
 	CriticalChance float64
 }
 
 type HolySmite struct {
-	Spell
+	Spell *Spell
 	HealAmount int
 }
 

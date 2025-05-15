@@ -16,6 +16,7 @@ type Mage struct {
 	Level     int
 	Manapool  int
 	Equipment tools.Weapon
+	Skill 	skills.Skill
 }
 
 func (m *Mage) UseSkill(skill skills.Skill) string {
