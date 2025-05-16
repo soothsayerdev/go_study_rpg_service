@@ -11,10 +11,13 @@ type Rogue struct {
 	Level     int
 	Energy    int
 	Equipment tools.Weapon
-	Skill skills.Skill
+	Ability 	skills.Ability
 }
 
-func (r *Rogue) UseSkill(skill skills.Skill) string {
+func (r *Rogue) UseAbility(skill skills.SkillPhys) string {
+	if r.Energy < r.Ability.CostEnergy {
+		return "Not enough energy to cast!"
+	}
 	return fmt.Sprintf("%s performs a sneaky %s", r.Name, skill.Execute())
 }
 

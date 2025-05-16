@@ -31,12 +31,19 @@ func main() {
 		Level:     30,
 		Energy:    100,
 		Equipment: poisonDagger,
+		Ability: skills.DaggerPoisoned{
+			Name: "Dagger Poisened",
+			DamagePerSecond: 10,
+			Min_Lvl: 10,
+		},
 	}
+
+	dagger
 
 	fireball := &skills.FireballSpell{
 		Spell: &skills.Spell{
 			Name:    "Fireball",
-			Cost:    50,
+			CostMana:    50,
 			Weapon:  fireStaff,
 			Element: "Fire",
 		},
