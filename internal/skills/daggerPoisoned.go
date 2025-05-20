@@ -2,7 +2,6 @@ package skills
 
 import (
 	"fmt"
-	"go_study_rpg_service/internal/classes"
 )
 
 type DaggerPoisoned struct {
@@ -10,6 +9,7 @@ type DaggerPoisoned struct {
 	DamagePerSecond int
 	Min_Lvl         int
 }
+// new DaggerP
 
 func (d *DaggerPoisoned) Execute() string {
 	// if classes.Rogue.Level < d.Min_Lvl {

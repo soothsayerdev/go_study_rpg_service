@@ -11,25 +11,26 @@ type Mage struct {
 	Level     int
 	Manapool  int
 	Equipment tools.Weapon
-	Skill     skills.Skill
+	Skill     skills.SkillMagic
 }
 
-func (m *Mage) UseSkill(skill skills.Skill) string {
-	if m.Manapool >= skill.GetManaCost() {
-		m.Manapool -= skill.GetManaCost()
+func NewMage(name string, level int, manapool int, equipment tools.Weapon, skill skills.SkillMagic) *Mage {
+	return &Mage{
+		Name:      name,
+		Level:     level,
+		Manapool:  manapool,
+		Equipment: equipment,
+		Skill:     skill,
+	}
+}
 
-		return fmt.Sprintf("%s %s (Mana remaining: %d)", m.Name, skill.GetManaCost(), m.Manapool)
+func (m *Mage) UseSkill() string {
+	if m.Manapool >= m.Skill.GetManaCost() {
+		m.Manapool -= m.Skill.GetManaCost()
+
+		return fmt.Sprintf("%s %d (Mana remaining: %d)", m.Name, m.Skill.GetManaCost(), m.Manapool)
 	}
 	return "Not enough mana!"
-}
-
-func (m *Mage) Execute() string {
-	if m.Manapool >= skills.Spell.Cost {
-		m.Manapool -= skill.GetManaCost()
-
-		return fmt.Sprintf("%s %s (Mana remaining: %d)", m.Name, skill.GetManaCost(), m.Manapool)
-	}
-	return "Not enough mana!"	
 }
 
 func (m *Mage) GetClassName() string {
