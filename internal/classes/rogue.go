@@ -11,7 +11,17 @@ type Rogue struct {
 	Level     int
 	Energy    int
 	Equipment tools.Weapon
-	Ability 	skills.Ability
+	Ability   skills.Ability
+}
+
+func NewRogue(name string, level int, energy int, equipment tools.Weapon, ability skills.Ability) *Rogue {
+	return &Rogue{
+		Name: name,
+		Level: level,
+		Energy: energy,
+		Equipment: equipment,
+		Ability: ability,
+	}
 }
 
 func (r *Rogue) UseAbility(skill skills.SkillPhys) string {

@@ -9,6 +9,7 @@ type DaggerPoisoned struct {
 	DamagePerSecond int
 	Min_Lvl         int
 }
+// new DaggerP
 
 func (d *DaggerPoisoned) Execute() string {
 	// if classes.Rogue.Level < d.Min_Lvl {

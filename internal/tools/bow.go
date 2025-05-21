@@ -9,18 +9,17 @@ type Bow struct {
 	CountArrow int
 }
 
-func (b *Bow) ReloadingBow() string {
-	b.CountArrow += 1
-	return fmt.Sprintf("Reloading bow, %d arrows now!", b.CountArrow)
-}
-
 func (b *Bow) Attack() string {
 	if b.CountArrow == 0 {
 		return "Not enough arrow suficient, reload bow!"
 	}
-	return fmt.Sprintf("Shooting arrow with %s", b.Name)
+	return "Shooting..."
 }
 
-func (b *Bow) GetName() string {
-	return b.Name
+func (b *Bow) DamageBonus() int { return 13 }
+func (b *Bow) GetName() string  { return b.Name }
+
+func (b *Bow) ReloadingBow() string {
+	b.CountArrow += 1
+	return fmt.Sprintf("Reloading bow, %d arrows now!", b.CountArrow)
 }

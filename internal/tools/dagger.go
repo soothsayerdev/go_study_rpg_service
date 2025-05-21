@@ -1,22 +1,24 @@
 package tools
 
-import "fmt"
-
 type Dagger struct {
 	Name    string
 	Poison  bool
-	Damage int
+	Stealth int
 }
 
-func (d *Dagger) Attack() string {
-	stealthAttack := "normal attack"
-	if d.Damage > 5 {
-		stealthAttack = "critical strike"
+func (d *Dagger) Attack() string   { return "Strinking" }
+func (d *Dagger) DamageBonus() int { return 15 }
+func (d *Dagger) GetName() string  { return "Sting" }
 
-	}
-	return fmt.Sprintf("Strinking from shadows with %s - %s!", d.Name, stealthAttack)
-}
+// func (d *Dagger) Attack() string {
+// 	stealthAttack := "normal attack"
+// 	if d.Stealth > 5 {
+// 		stealthAttack = "critical strike"
 
-func (d *Dagger) GetName() string {
-	return d.Name
-}
+// 	}
+// 	return fmt.Sprintf("Strinking from shadows with %s - %s!", d.Name, stealthAttack)
+// }
+
+// func (d *Dagger) GetName() string {
+// 	return d.Name
+// }
