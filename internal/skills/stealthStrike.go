@@ -8,7 +8,7 @@ type StealthStrike struct {
 }
 
 func (s *StealthStrike) Execute() string {
-	return fmt.Sprintf("Casting %s with %s - Critical Chance : %d - Cost: %d",
+	return fmt.Sprintf("Casting %s with %s - Critical Chance : %f - Cost: %d",
 		s.Ability.Name, s.Ability.Weapon.Attack(), s.CriticalChance, s.Ability.CostEnergy)
 }
 

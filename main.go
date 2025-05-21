@@ -38,7 +38,19 @@ func main() {
 		},
 	}
 
-	dagger
+	daggerPoisoned := &skills.DaggerPoisoned{
+		Ability: &skills.Ability{
+			Name: "Arac's ruin",
+			CostEnergy: 15,
+			Weapon: &tools.Dagger{
+				Name: "Sith's Dagger",
+				Poison: false,
+				Damage: 20,
+			},
+		},
+		DamagePerSecond: 8,
+		Min_Lvl: 10,
+	}
 
 	fireball := &skills.FireballSpell{
 		Spell: &skills.Spell{
@@ -62,6 +74,7 @@ func main() {
 		},
 	}
 
+	fmt.Println(rogue.Ability)
 	fmt.Println(gandalf.UseSkill(fireball))
 	fmt.Println(rogue.Equipment.Attack())
 	fmt.Println(legolas.Equipment.Attack())

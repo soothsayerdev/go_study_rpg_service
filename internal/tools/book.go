@@ -30,5 +30,5 @@ func (b *Book) invokeCreature() string {
 }
 
 func (b *Book) GetName() string {
-	return Book.Name
+	return b.Name
 }

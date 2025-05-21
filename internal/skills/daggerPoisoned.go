@@ -2,7 +2,6 @@ package skills
 
 import (
 	"fmt"
-	"go_study_rpg_service/internal/classes"
 )
 
 type DaggerPoisoned struct {

@@ -5,12 +5,12 @@ import "fmt"
 type Dagger struct {
 	Name    string
 	Poison  bool
-	Stealth int
+	Damage int
 }
 
 func (d *Dagger) Attack() string {
 	stealthAttack := "normal attack"
-	if d.Stealth > 5 {
+	if d.Damage > 5 {
 		stealthAttack = "critical strike"
 
 	}
