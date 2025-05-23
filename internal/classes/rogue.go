@@ -32,5 +32,5 @@ func (r *Rogue) UseAbility(skill skills.SkillPhys) string {
 }
 
 func (r *Rogue) GetClassName() string {
-	return "Rogue"
+	return r.Name
 }

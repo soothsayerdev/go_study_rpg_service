@@ -22,3 +22,7 @@ func NewKnight(name string, level int, energy int, equipment tools.Weapon, skill
 		Skill: skill,
 	}
 }
+
+func (k *Knight) GetClassName() string {
+	return k.Name
+}

@@ -19,7 +19,7 @@ func (b *Bow) Attack() string {
 func (b *Bow) DamageBonus() int { return 13 }
 func (b *Bow) GetName() string  { return b.Name }
 
-func (b *Bow) ReloadingBow() string {
+func (b *Bow) ReloadingBow() string { // qm carrega o arco é o arqueiro ou o arco? e pq?
 	b.CountArrow += 1
 	return fmt.Sprintf("Reloading bow, %d arrows now!", b.CountArrow)
 }

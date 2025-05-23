@@ -56,6 +56,7 @@ func main() {
 	// new daggerPoisoned
 	rogue := classes.NewRogue("Sam", 19, 60, &tools.Dagger{}, *daggerPoisoned)
 	bk_mage := classes.NewMage("BK", 29, 200, &tools.Staff{}, fireball)
+	rogue2 := classes.NewRogue("Sam", 19, 60, poisonDagger, *daggerPoisoned)
 
 	legolas := &classes.Archer{
 		Name:   "Legolas",
@@ -99,5 +100,6 @@ func main() {
 	fmt.Println(bagMage.Items)
 	fmt.Println(gandalf.UseSkill())
 	fmt.Println(rogue.Equipment.Attack())
+	fmt.Println(rogue2.Equipment.Attack())
 	fmt.Println(legolas.Equipment.Attack())
 }
